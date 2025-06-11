@@ -1,11 +1,14 @@
-
-
-export default function Home() {
+import { currentUser } from '@clerk/nextjs/server'
+export default async function Home() {
+ 
+const user = await currentUser()
+   
   return (
     <div className="w-full min-h-screen flex flex-col items-center bg-stone-200 border-8 border-black rounded-2xl">
           <h1 className="text-5xl my-15 font-bold">
             Welcome to the Blog
           </h1>
+           {user &&(<div className='font-bold text-4xl my-10'>Hello {user?.firstName}</div>)}
           <p className="text-xl font-semibold mx-5 leading-8 max-w-3xl">
           The Unseen Beauty of Everyday Moments
 

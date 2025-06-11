@@ -4,11 +4,11 @@
 import { revalidatePath } from 'next/cache'; // For revalidating cached data
 import { redirect } from 'next/navigation'; // For server-side redirects (if needed)
 
-// Define the Server Action function
+// Define tically created from the form inputs
+  // IMPORTANT: Input fields MUST have ahe Server Action function
 export async function addPost(prevState, formData) {
   // `prevState` is the last state returned by the action (from useFormState)
-  // `formData` is a FormData object automatically created from the form inputs
-  // IMPORTANT: Input fields MUST have a `name` attribute for `formData` to capture their values.
+  // `formData` is a FormData object automat `name` attribute for `formData` to capture their values.
 
   const title = formData.get('title');
   const body = formData.get('body');
